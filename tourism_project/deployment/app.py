@@ -6,16 +6,16 @@ import os
 
 # Download and load the trained model pipeline
 model_path = hf_hub_download(
-    repo_id="vinodtigadi/customer-purchase-prediction",
+    repo_id="vinodtigadi/tourism-package-prediction",
     repo_type="model",
-    filename="customer_purchase_prediction_model_v2.joblib"
+    filename="tourism_project_model_v1.joblib"
 )
 model = joblib.load(model_path)
 
 # Streamlit UI
-st.title("Customer Purchase Prediction App")
+st.title("Tourism Package Prediction App")
 st.write("""
-This app predicts whether a customer will purchase a product based on their profile and interaction data.
+This app predicts whether a customer will purchase a 'Tourism Package' product based on their profile and interaction data.
 """)
 
 # --- User Inputs ---
