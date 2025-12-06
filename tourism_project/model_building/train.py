@@ -16,6 +16,8 @@ from huggingface_hub import login, HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 import mlflow
 
+#mlflow.set_tracking_uri(public_url)
+public_url = "https://hyman-nonstylized-kaidence.ngrok-free.dev"    # This is the Public URL got from ngroq
 mlflow.set_tracking_uri(public_url)
 mlflow.set_experiment("Tourism_Package_Project_experiment")
 
