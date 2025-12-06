@@ -24,13 +24,13 @@ This app predicts whether a customer will purchase a 'Tourism Package' product b
 
 # Binary Inputs
 gender = st.radio("Gender", ["Male", "Female"])
-passport = st.radio("Has Passport?", [0, 1], index=1)
 own_car = st.radio("Owns Car?", [0, 1], index=0)
+passport = st.radio("Holds Passport?", [0, 1], index=1)
 
 # Categorical Inputs
-typeofcontact = st.selectbox("Type of Contact", ["Self Inquiry", "Company Invited"])
-occupation = st.selectbox("Occupation", ["Free Lancer", "Salaried", "Small Business", "Large Business"])
-marital_status = st.selectbox("Marital Status", ["Single", "Married", "Divorced","Unmarried"])
+typeofcontact = st.selectbox("Type of Contact", ["Self Enquiry", "Company Invited"])
+occupation = st.selectbox("Occupation", ["Freelancer", "Salaried", "Small Business", "Large Business"])
+marital_status = st.selectbox("Marital Status", ["Single", "Married", "Divorced"])
 product_pitched = st.selectbox("Product Pitched", ["Basic", "Deluxe", "King", "Standard", "Super Deluxe"] )
 designation = st.selectbox("Designation", ["AVP", "Executive", "Manager", "Senior Manager", "VP"])
 
@@ -38,13 +38,13 @@ designation = st.selectbox("Designation", ["AVP", "Executive", "Manager", "Senio
 age = st.number_input("Age", min_value=18, max_value=100, value=30)
 city_tier = st.number_input("City Tier", min_value=1, max_value=3, value=2)
 monthly_income = st.number_input("Monthly Income", min_value=1000, max_value=1000000, value=50000)
-duration_of_pitch = st.number_input("Duration of Pitch (minutes)", min_value=1, max_value=200, value=5)
-number_of_person_visiting = st.number_input("Number of People Visiting", min_value=0, max_value=20, value=1)
+duration_of_pitch = st.number_input("Duration of Pitch (minutes)", min_value=1, max_value=200, value=10)
+number_of_person_visiting = st.number_input("Number of People Visiting", min_value=0, max_value=8, value=1)
 preferred_property_star = st.number_input("Preferred Property Star", min_value=1, max_value=5, value=3)
 number_of_trips = st.number_input("Number of Trips per Year", min_value=0, max_value=50, value=2)
 number_of_children_visiting = st.number_input("Number of Children Visiting", min_value=0, max_value=10, value=0)
 pitch_satisfaction_score = st.number_input("Pitch Satisfaction Score", min_value=1, max_value=10, value=5)
-number_of_followups = st.number_input("Number of Followups", min_value=0, max_value=20, value=1)
+number_of_followups = st.number_input("Number of Followups", min_value=0, max_value=10, value=1)
 
 # Convert Gender to binary
 gender_encoded = 0 if gender == "Male" else 1

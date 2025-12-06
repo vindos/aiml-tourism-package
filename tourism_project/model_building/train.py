@@ -88,10 +88,10 @@ with mlflow.start_run():
         std_score = results['std_test_score'][i]
 
         # Log each combination as a separate MLflow run
-        with mlflow.start_run(nested=True):
-            mlflow.log_params(param_set)
-            mlflow.log_metric("mean_test_score", mean_score)
-            mlflow.log_metric("std_test_score", std_score)
+        # with mlflow.start_run(nested=True):
+        #     mlflow.log_params(param_set)
+        #     mlflow.log_metric("mean_test_score", mean_score)
+        #     mlflow.log_metric("std_test_score", std_score)
 
     # Log best parameters separately in main run
     mlflow.log_params(grid_search.best_params_)

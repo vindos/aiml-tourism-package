@@ -22,6 +22,9 @@ df.drop(columns=['CustomerID'], inplace=True)
 # Fixing the Gender Values where the 'Fe Male' is wrong data.
 df['Gender'] = df['Gender'].replace('Fe Male','Female')
 
+# Fixing the Marital Status where the 'Unmarried' is equaivalent to 'Single'
+df['MaritalStatus'] = df['MaritalStatus'].replace('Unmarried','Single')
+
 # Encoding the categorical 'Type' column
 label_encoder = LabelEncoder()
 cat_features = df.select_dtypes(object).columns
