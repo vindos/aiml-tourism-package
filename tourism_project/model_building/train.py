@@ -18,12 +18,12 @@ import mlflow
 
 #mlflow.set_tracking_uri(public_url)
 public_url = "https://hyman-nonstylized-kaidence.ngrok-free.dev"    # This is the Public URL got from ngroq
-#mlflow.set_tracking_uri(public_url)
+mlflow.set_tracking_uri(public_url)
 
 ## While running the Github actions, the job started failing in the Model Building step
 ## On inspecting, found the error as "You have exceeded your limit of 360 requests per minute. This limit will reset within 1 minute. If you expect to continually exceed these limits, please upgrade your plan"
 ## Hence going ahead with local setup of mlflow and running on localserver.
-mlflow.set_tracking_uri("http://localhost:5000")
+#mlflow.set_tracking_uri("http://localhost:5000")
 mlflow.set_experiment("Tourism_Package_Project_experiment")
 
 api = HfApi()
@@ -87,6 +87,8 @@ with mlflow.start_run():
         mean_score = results['mean_test_score'][i]
         std_score = results['std_test_score'][i]
 
+        # As am getting the restrictions of Log Limit from Ngrok, will log only best params.
+        
         # Log each combination as a separate MLflow run
         # with mlflow.start_run(nested=True):
         #     mlflow.log_params(param_set)
