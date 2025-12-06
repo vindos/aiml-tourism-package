@@ -19,6 +19,9 @@ print("Dataset loaded successfully.")
 # Drop the unique identifier
 df.drop(columns=['CustomerID'], inplace=True)
 
+# Fixing the Gender Values where the 'Fe Male' is wrong data.
+df['Gender'] = df['Gender'].replace('Fe Male','Female')
+
 # Encoding the categorical 'Type' column
 label_encoder = LabelEncoder()
 cat_features = df.select_dtypes(object).columns
