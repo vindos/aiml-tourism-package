@@ -6,10 +6,12 @@ import os
 
 # Download and load the trained model pipeline
 model_path = hf_hub_download(
-    repo_id="vinodtigadi/tourism-package-prediction",
+    repo_id="vinodtigadi/tourism-package",
     repo_type="model",
     filename="tourism_project_model_v1.joblib"
 )
+
+
 model = joblib.load(model_path)
 
 # Streamlit UI
